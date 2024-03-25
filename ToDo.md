@@ -8,6 +8,6 @@
 
 ## Wanted Features
 
-- [ ] One Generic Quiz Component, that handles all quizzes in the /assets/content folder
+- [x] One Generic Quiz Component, that handles all quizzes in the /assets/content folder
 - [ ] Render navbar with all of the titles from the quizzes in the /assets/content folder
 - [ ] Better styling
