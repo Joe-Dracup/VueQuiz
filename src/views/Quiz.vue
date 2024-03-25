@@ -3,7 +3,7 @@ import type { Quiz } from '@/types/quiz'
 import QuizContainer from '@/components/QuizContainer.vue'
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { GetQuiz } from '@/Helpers/QuizService'
+import { GetQuiz } from '@/helpers/QuizService'
 
 const route = useRoute()
 
