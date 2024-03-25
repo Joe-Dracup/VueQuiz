@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import type { Quiz } from '@/types/quiz'
 import QuizContainer from '@/components/QuizContainer.vue'
-import items from '@/assets/content/vuequiz.json'
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { GetQuiz } from '@/Helpers/QuizService'
 
-const quiz = ref<Quiz>(items)
+const route = useRoute()
+
+const quiz = ref<Quiz>(await GetQuiz(route.params.quizname as string))
 const quizFinished = ref(false)
 const correctAnswers = ref(0)
 
