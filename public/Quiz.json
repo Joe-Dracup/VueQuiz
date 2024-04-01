@@ -1,6 +1,6 @@
 {
     "Title": "Vue Quiz",
-    "MaxAnswerAttempts": 2,
+    "MaxAnswerAttempts": 1,
     "Questions": [
         {
             "QuestionId": 1,

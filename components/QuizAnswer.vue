@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import type { Answer } from '@/types/quiz'
-import { ref, computed } from 'vue'
+import type { Answer } from "@/types/quiz";
+import { ref, computed } from "vue";
 
 const props = defineProps<{
-  answer: Answer
-  questionDisabled: boolean
-  isCorrectAnswer: boolean
-}>()
+  answer: Answer;
+  questionDisabled: boolean;
+  isCorrectAnswer: boolean;
+}>();
 
 const emit = defineEmits<{
-  (e: 'answer-clicked', answerId: number): void
-}>()
+  (e: "answer-clicked", answerId: number): void;
+}>();
 
-const disabled = ref(false)
+const disabled = ref(false);
 
 const showDisabled = computed(() => {
-  return disabled.value || props.questionDisabled
-})
+  return disabled.value || props.questionDisabled;
+});
 
 function submitAnswer(answerId: number): void {
-  disabled.value = true
-  emit('answer-clicked', answerId)
+  disabled.value = true;
+  emit("answer-clicked", answerId);
 }
 </script>
 
