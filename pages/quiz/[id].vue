@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { Quiz } from '@/types/quiz';
+const router = useRoute();
 
-const { data: quiz } = await useFetch<Quiz>('/api/quiz');
+const { data: quiz } = await useFetch<Quiz>(`/api/${router.params.id}`);
 </script>
 
 <template>

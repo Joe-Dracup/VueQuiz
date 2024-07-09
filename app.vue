@@ -2,13 +2,13 @@
   <header>
     <nav class="nav">
       <div class="nav-left">
-        <RouterLink to=".">Home</RouterLink>
-        <RouterLink to="/quiz">Vue Quiz</RouterLink>
+        <NuxtLink to="/">Home</NuxtLink>
+        <NuxtLink to="/quiz/123">Vue Quiz</NuxtLink>
       </div>
     </nav>
   </header>
 
-  <RouterView />
+  <NuxtPage />
 </template>
 
 <style lang="scss" scoped>
