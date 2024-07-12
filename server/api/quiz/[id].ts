@@ -1,57 +1,15 @@
-export default defineEventHandler((event) => {
-  const id = getRouterParam(event, 'id');
+import { eq } from 'drizzle-orm'
+import { quizzes } from '~/db/schema'
 
-  if (id === '123')
-    return {
-      Title: 'Vue Quiz',
-      MaxAnswerAttempts: 1,
-      Questions: [
-        {
-          QuestionId: 1,
-          QuestionText: 'How old is Joe?',
-          CorrectAnswerId: 2,
-          Answers: [
-            {
-              AnswerId: 1,
-              AnswerText: '16',
-            },
-            {
-              AnswerId: 2,
-              AnswerText: '25',
-            },
-            {
-              AnswerId: 3,
-              AnswerText: '40',
-            },
-            {
-              AnswerId: 4,
-              AnswerText: '106',
-            },
-          ],
-        },
-        {
-          QuestionId: 2,
-          QuestionText: 'Does Leon Suck?',
-          CorrectAnswerId: 4,
-          Answers: [
-            {
-              AnswerId: 1,
-              AnswerText: 'Depends on the phase of the moon',
-            },
-            {
-              AnswerId: 2,
-              AnswerText: 'What was the question again?',
-            },
-            {
-              AnswerId: 3,
-              AnswerText: 'Ask again later',
-            },
-            {
-              AnswerId: 4,
-              AnswerText: 'Yes',
-            },
-          ],
-        },
-      ],
-    };
-});
+export default defineEventHandler(async (event) => {
+  const id = await getRouterParam(event, 'id')
+
+  const match = await event.context.db
+    .select()
+    .from(quizzes)
+    .where(eq(quizzes.id, id!))
+
+  return match.length > 0
+    ? match[0].quiz
+    : setResponseStatus(event, 404, 'Page Not Found')
+})

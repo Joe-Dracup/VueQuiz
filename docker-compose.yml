@@ -9,14 +9,18 @@ services:
     volumes:
       - postgres-db:/data/vue_quiz
     ports:
-      - "5432:5432"
+      - '5432:5432'
 
   vuequiz:
     build: .
     container_name: vue_quiz
     restart: unless-stopped
+    environment:
+      - NUXT_DATABASE_URL=${DB_URL}
     ports:
       - 3000:3000
+    profiles:
+      - live
 
 volumes:
   postgres-db:

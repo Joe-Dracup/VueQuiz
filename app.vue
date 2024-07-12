@@ -3,7 +3,7 @@
     <nav class="nav">
       <div class="nav-left">
         <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="/quiz/123">Vue Quiz</NuxtLink>
+        <NuxtLink to="/quiz/12345678">Vue Quiz</NuxtLink>
       </div>
     </nav>
   </header>
