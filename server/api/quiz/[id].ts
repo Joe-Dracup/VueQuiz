@@ -11,5 +11,5 @@ export default defineEventHandler(async (event) => {
 
   return match.length > 0
     ? match[0].quiz
-    : setResponseStatus(event, 404, 'Page Not Found')
+    : setResponseStatus(event, 404, 'Quiz Not Found')
 })

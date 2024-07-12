@@ -1,5 +1,5 @@
-import { migrate } from "drizzle-orm/node-postgres/migrator"
-import { getDB } from "../../db/db"
+import { migrate } from 'drizzle-orm/node-postgres/migrator'
+import { getDB } from '../../db/db'
 
 export default defineNitroPlugin(async () => {
   const config = useRuntimeConfig()
@@ -7,7 +7,7 @@ export default defineNitroPlugin(async () => {
 
   if (!connectionString)
     throw new Error(
-      "Database connection string not provided. Ensure that NUXT_DATABASE_URL is set in .env or as an environment variable."
+      'Database connection string not provided. Ensure that NUXT_DATABASE_URL is set in .env or as an environment variable.'
     )
 
   const { db, connection } = getDB(connectionString)

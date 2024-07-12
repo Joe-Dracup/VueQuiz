@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Quiz } from "@/types/quiz"
+import type { Quiz } from '@/types/quiz'
 const router = useRoute()
 
 const { data: quiz } = await useFetch<Quiz>(`/api/quiz/${router.params.id}`)
@@ -8,6 +8,11 @@ const { data: quiz } = await useFetch<Quiz>(`/api/quiz/${router.params.id}`)
 <template>
   <main>
     <QuizRenderer v-if="quiz" :quiz="quiz"></QuizRenderer>
-    <div v-else>Could not find a quiz with that id</div>
+    <div v-else>
+      <h1>Oops</h1>
+      <h2>We could not find that quiz, please try again</h2>
+    </div>
   </main>
 </template>
+
+<style lang="sass" scoped></style>
