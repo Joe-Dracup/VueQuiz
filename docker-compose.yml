@@ -1,6 +1,7 @@
-vuequiz:
-  build: .
-  container_name: vue_quiz
-  restart: unless-stopped
-  ports:
-    - 3000:3000
+services:
+  vuequiz:
+    build: .
+    container_name: vue_quiz
+    restart: unless-stopped
+    ports:
+      - 3000:3000
