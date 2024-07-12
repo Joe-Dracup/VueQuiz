@@ -1,7 +1,23 @@
 services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: vue_quiz
+      POSTGRES_PASSWORD: this_is_not_a_real_password
+      PGDATA: /data/vue_quiz
+    volumes:
+      - postgres-db:/data/vue_quiz
+    ports:
+      - "5432:5432"
+
   vuequiz:
     build: .
     container_name: vue_quiz
     restart: unless-stopped
     ports:
       - 3000:3000
+
+volumes:
+  postgres-db:
+    driver: local
