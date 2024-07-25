@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const schema: FormKitSchemaNode = [
+import type { FormKitSchemaNode } from '@formkit/core'
+
+const schema: FormKitSchemaNode[] = [
   {
     $el: 'h1',
     children: 'Create A Quiz',
