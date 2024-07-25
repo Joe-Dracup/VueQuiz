@@ -4,6 +4,7 @@
       <div class="nav-left">
         <NuxtLink to="/">Home</NuxtLink>
         <NuxtLink to="/quiz/12345678">Vue Quiz</NuxtLink>
+        <NuxtLink to="/quiz/create">Create a Quiz</NuxtLink>
       </div>
     </nav>
   </header>

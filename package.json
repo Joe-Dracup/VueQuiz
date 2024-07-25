@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@formkit/nuxt": "^1.6.5",
     "@paralleldrive/cuid2": "^2.2.2",
     "drizzle-orm": "^0.32.0",
     "nuxt": "^3.11.1",
