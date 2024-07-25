@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import type { Quiz } from '@/types/quiz';
+import type { Quiz } from '@/types/quiz'
 
-const props = defineProps<{ quiz: Quiz }>();
+const props = defineProps<{ quiz: Quiz }>()
 
-const quizFinished = ref(false);
-const correctAnswers = ref(0);
+const quizFinished = ref(false)
+const correctAnswers = ref(0)
 
 function FinishQuiz(n: number): void {
-  correctAnswers.value = n;
-  quizFinished.value = true;
+  correctAnswers.value = n
+  quizFinished.value = true
 }
 </script>
 <template>
   <div>
     <h1>{{ quiz.Title }}</h1>
-    <QuizContainer
+    <QuizDisplayQuestionContainer
       v-if="!quizFinished"
       @finish-quiz="FinishQuiz"
       :quiz="quiz"

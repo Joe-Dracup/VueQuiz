@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Quiz } from '@/types/quiz'
 import { ref } from 'vue'
-import QuizQuestion from '@/components/QuizQuestion.vue'
 
 const props = defineProps<{
   quiz: Quiz
@@ -38,7 +37,7 @@ function QuestionAnswered(correct: boolean): void {
 
 <template>
   <div class="question">
-    <QuizQuestion
+    <QuizDisplayQuestion
       v-for="question in quiz.Questions"
       :question="question"
       :isActive="question.QuestionId === activeQuestionId"

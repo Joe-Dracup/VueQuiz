@@ -7,7 +7,7 @@ const { data: quiz } = await useFetch<Quiz>(`/api/quiz/${router.params.id}`)
 
 <template>
   <main>
-    <QuizRenderer v-if="quiz" :quiz="quiz"></QuizRenderer>
+    <QuizDisplayRenderer v-if="quiz" :quiz="quiz"></QuizDisplayRenderer>
     <div v-else>
       <h1>Oops</h1>
       <h2>We could not find that quiz, please try again</h2>
