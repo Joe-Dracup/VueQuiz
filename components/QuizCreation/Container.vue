@@ -23,7 +23,7 @@ async function save() {
 <template>
   <FormKit
     type="form"
-    submit-label="Login"
+    submit-label="Save"
     :submit-attrs="{
       id: 'submit',
     }"
