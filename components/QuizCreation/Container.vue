@@ -21,7 +21,14 @@ async function save() {
 </script>
 
 <template>
-  <FormKit type="form" :submit="save" submit-text="Save">
+  <FormKit
+    type="form"
+    submit-label="Login"
+    :submit-attrs="{
+      id: 'submit',
+    }"
+    @submit="save"
+  >
     <FormKitSchema :schema="schema" />
   </FormKit>
 </template>
